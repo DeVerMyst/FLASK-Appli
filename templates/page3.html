@@ -6,12 +6,18 @@
 
 {% block content %}
 <!-- 
+
     
-    créer la base de données
     input text
     bouton validation -> envoyer les données dans la bdd
     separation
     lister toute la base de données et afficher les resultats
 
  -->
+ <ul>
+{% for i in comments: %}
+    <li>{{i.comment}}</li>
+{% endfor %}
+</ul>
+
 {% endblock %}

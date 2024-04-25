@@ -1,6 +1,9 @@
 # routes/routes.py 
 from flask import render_template
+from modules.create_session import create_db
 from models.model_blog import ModelBlog
+
+session = create_db()
 
 
 def routes_setup(app):
@@ -28,5 +31,6 @@ def routes_setup(app):
     def demain():
         
         # créer ou vérifier que la base de données existe
+        req = session.query(ModelBlog).all()
+        return render_template("page3.html", comments=req)
         
-        return render_template("page3.html")        
